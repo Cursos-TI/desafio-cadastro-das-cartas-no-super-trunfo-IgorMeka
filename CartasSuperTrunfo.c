@@ -17,6 +17,7 @@ int main() {
     int pontosTuristicos1, pontosTuristicos2;
     float densidadePopulacional1, densidadePopulacional2;
     float perCapita1, perCapita2;
+    float superPoder1, superPoder2;
 
     // Exemplos de atributos: código da cidade, nome, população, área, PIB, número de pontos turísticos.
     
@@ -68,6 +69,8 @@ int main() {
         densidadePopulacional2 = populacao2 / area2;
         perCapita1 = pib1 / populacao1;
         perCapita2 = pib2 / populacao2;
+        superPoder1 = (float)(1/densidadePopulacional1) + populacao1 + area1 + pib1 + pontosTuristicos1, perCapita1;
+        superPoder2 = (float)(1/densidadePopulacional2) + populacao2 + area2 + pib2 + pontosTuristicos2, perCapita2;
 
     // Exibição dos Dados das Cartas:
     // Sugestão: Utilize a função printf para exibir as informações das cartas cadastradas de forma clara e organizada.
@@ -94,6 +97,16 @@ int main() {
     printf("Densidade Populacional: %.2f hab/km²\n", densidadePopulacional2);
     printf("PIB per Capita: %.2f Reais\n", perCapita2);
 
+    //Comparação das cartas:
+    printf("\nComparação das cartas:\n");
+    printf("Legenda: se o resultado da comparação for 1, carta 1 vence, caso seja resultado 0, carta 2 venceu: \n");
+    printf("População: %u\n", (populacao1) > (populacao2));
+    printf("Área: %d\n", (area1) > (area2));
+    printf("PIB: %d\n", (pib1) > (pib2));
+    printf("Pontos Turísticos: %d\n", (pontosTuristicos1) > (pontosTuristicos2));
+    printf("Densidade Populacional: %d\n", (densidadePopulacional1) < (densidadePopulacional2));
+    printf("PIB per Capita: %d\n", (perCapita1) > (perCapita2));
+    printf("Super Poder: %d\n", (superPoder1) > (superPoder2));
 
     return 0;
 }
